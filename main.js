@@ -2,6 +2,7 @@
 // #ifndef VUE3
 import Vue from 'vue'
 import App from './App'
+import Mock from './mock/index.js'
 
 Vue.config.productionTip = false
 
