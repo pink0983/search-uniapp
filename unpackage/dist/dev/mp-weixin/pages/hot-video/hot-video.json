@@ -1,5 +1,8 @@
 {
   "navigationBarTitleText": "视频",
   "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "usingComponents": {
+    "hot-video-item": "../../components/hot-video-item/hot-video-item",
+    "mescroll-body": "../../uni_modules/mescroll-uni/components/mescroll-body/mescroll-body"
+  }
 }

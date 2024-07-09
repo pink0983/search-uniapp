@@ -1,0 +1,1 @@
+<view class="collect-box data-v-30908e7e" bindtap="{{b}}"><image class="img data-v-30908e7e" src="{{a}}"/><text class="txt data-v-30908e7e">收藏</text></view>

@@ -1,11 +1,16 @@
 <template>
 	<view class="tab-container">
 		<view class="tab-box">
-			<scroll-view scroll-x class="scroll-view" scroll-with-animation>
+			<scroll-view scroll-x class="scroll-view" scroll-with-animation
+			:scroll-left="scrollLeft">
 				<view class="scroll-content">
 					<view class="tab-item-box">
 						<block v-for="(item,index) in tabData" :key="index">
-							<view class="tab-item" :class="{ 'tab-item-active': activeIndex ===index}" @click="onTabClick(index)">
+							<view :id="'_tab_' + index" class="tab-item" :class="{ 'tab-item-active': activeIndex === index}" @click="tabClick(index)"
+							:style="{
+								color:
+									activeIndex === index ? defaultConfig.activeTextColor : defaultConfig.textColor
+							}">
 							{{item.label || item}}
 							</view>
 						</block>
@@ -16,7 +21,8 @@
 						width: defaultConfig.underLineWidth + 'px',
 						height: defaultConfig.underLineHeight + 'px',
 						backgroundColor: defaultConfig.underLineColor
-					}"></view>
+					}">
+					</view>
 				</view>
 			</scroll-view>
 		</view>
@@ -90,7 +96,7 @@ export default {
     defaultIndex: {
       handler(val) {
         this.activeIndex = val;
-        // 定义滑块的位置
+        // 重新计算滑块的位置
         this.tabToIndex();
       },
       // 该回调将会在侦听开始之后被立即调用
@@ -114,6 +120,7 @@ export default {
        * 为 tabList 的每个 item 单独额外维护一个 slider 的滑块对象
        */
       let data = this.tabList;
+	  // console.log('data',data);
       if (data.length == 0) return false;
 
       // 获取 dom 的固定写法
@@ -124,6 +131,7 @@ export default {
         query
           .select('#_tab_' + index)
           .boundingClientRect((res) => {
+			  // res就是拿到的dom
             // 为数据对象中每一个 item 都维护一个 _slider（滑动条） 对象
             item._slider = {
               // 当前的 tab 距离左侧的距离
@@ -145,7 +153,7 @@ export default {
       // 定义滑块的位置
       this.tabToIndex();
       // 发送通知
-      this.$emit('tabClick', index);
+      this.$emit('tabclick', index);
     },
     /**
      * 根据当前的 activeIndex 下标，计算 【滑块】 滚动位置
@@ -194,7 +202,7 @@ export default {
         position: relative;
 
         .tab-item-box {
-          height: 100%;
+          height: 42px;
           .tab-item {
             height: 100%;
             display: inline-block;
@@ -203,7 +211,6 @@ export default {
             position: relative;
             text-align: center;
             color: $uni-text-color;
-
             &-active {
               color: $uni-text-color-hot;
             }

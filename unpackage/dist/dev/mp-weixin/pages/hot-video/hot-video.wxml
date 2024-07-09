@@ -1,1 +1,1 @@
-<view></view>
+<view class="hot-video-container data-v-ce12fcda"><mescroll-body class="r data-v-ce12fcda" u-s="{{['d']}}" u-r="mescrollRef" bindinit="{{c}}" binddown="{{d}}" bindup="{{e}}" u-i="ce12fcda-0" bind:__l="__l"><block wx:for="{{a}}" wx:for-item="item" wx:key="d"><hot-video-item wx:if="{{item.c}}" class="data-v-ce12fcda" bindclick="{{item.a}}" u-i="{{item.b}}" bind:__l="__l" u-p="{{item.c}}"/></block></mescroll-body></view>

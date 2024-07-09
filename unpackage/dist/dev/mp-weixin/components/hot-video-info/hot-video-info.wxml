@@ -1,0 +1,1 @@
+<view class="hot-video-info-container"><view class="video-title">{{a}}</view><view class="video-info"><view class="author-box"><image class="avatar" src="{{b}}"/><text class="author-txt">{{c}}</text></view><view class="barrage-box"><uni-icons wx:if="{{d}}" class="barrage-icon" u-i="1b9b4a18-0" bind:__l="__l" u-p="{{d}}"/><text class="barrage-num">{{e}}</text></view></view></view>

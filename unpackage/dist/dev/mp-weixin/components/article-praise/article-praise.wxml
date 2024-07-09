@@ -1,0 +1,1 @@
+<view class="praise-box data-v-6b59017d" bindtap="{{b}}"><image class="img data-v-6b59017d" src="{{a}}"/><text class="txt data-v-6b59017d">点赞</text></view>

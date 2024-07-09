@@ -47,7 +47,7 @@
   position: relative;
 }
 .tab-container .tab-box .scroll-view .scroll-content .tab-item-box.data-v-dba27115 {
-  height: 100%;
+  height: 42px;
 }
 .tab-container .tab-box .scroll-view .scroll-content .tab-item-box .tab-item.data-v-dba27115 {
   height: 100%;

@@ -1,0 +1,1 @@
+<view class="comment-container data-v-ba7f7ecf" style="{{'bottom:' + e}}"><uni-easyinput wx:if="{{b}}" class="data-v-ba7f7ecf" u-i="ba7f7ecf-0" bind:__l="__l" bindupdateModelValue="{{a}}" u-p="{{b}}"></uni-easyinput><button class="commit data-v-ba7f7ecf" type="primary" disabled="{{c}}" size="mini" bindtap="{{d}}"> 发送 </button></view>

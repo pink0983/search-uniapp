@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "my-search": "../my-search/my-search",
+    "article-praise": "../article-praise/article-praise",
+    "article-collect": "../article-collect/article-collect"
+  }
+}

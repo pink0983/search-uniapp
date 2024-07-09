@@ -4,6 +4,18 @@
     "pages/hot-video/hot-video",
     "pages/my/my"
   ],
+  "subPackages": [
+    {
+      "root": "subpkg",
+      "pages": [
+        "pages/search-blog",
+        "pages/blog-detail/blog-detail",
+        "pages/login-page/login-page",
+        "pages/video-detail/video-detail"
+      ],
+      "name": "sub-1"
+    }
+  ],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",

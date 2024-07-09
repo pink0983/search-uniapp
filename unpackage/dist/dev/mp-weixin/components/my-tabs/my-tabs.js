@@ -88,7 +88,7 @@ const _sfc_main = {
       let data = this.tabList;
       if (data.length == 0)
         return false;
-      const query = common_vendor.index.createSelectorQuery().in(this);
+      const query = common_vendor.index$1.createSelectorQuery().in(this);
       data.forEach((item, index) => {
         query.select("#_tab_" + index).boundingClientRect((res) => {
           item._slider = {
@@ -107,7 +107,7 @@ const _sfc_main = {
     tabClick(index) {
       this.activeIndex = index;
       this.tabToIndex();
-      this.$emit("tabClick", index);
+      this.$emit("tabclick", index);
     },
     /**
      * 根据当前的 activeIndex 下标，计算 【滑块】 滚动位置
@@ -134,15 +134,18 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     a: common_vendor.f($props.tabData, (item, index, i0) => {
       return {
         a: common_vendor.t(item.label || item),
-        b: _ctx.activeIndex === index ? 1 : "",
-        c: common_vendor.o(($event) => _ctx.onTabClick(index), index),
-        d: index
+        b: "_tab_" + index,
+        c: _ctx.activeIndex === index ? 1 : "",
+        d: common_vendor.o(($event) => $options.tabClick(index), index),
+        e: _ctx.activeIndex === index ? _ctx.defaultConfig.activeTextColor : _ctx.defaultConfig.textColor,
+        f: index
       };
     }),
     b: "translateX(" + _ctx.slider.left + "px)",
     c: _ctx.defaultConfig.underLineWidth + "px",
     d: _ctx.defaultConfig.underLineHeight + "px",
-    e: _ctx.defaultConfig.underLineColor
+    e: _ctx.defaultConfig.underLineColor,
+    f: _ctx.scrollLeft
   };
 }
 const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-dba27115"], ["__file", "F:/uniapp-project/search-uniapp/components/my-tabs/my-tabs.vue"]]);
